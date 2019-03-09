@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">IPB Booking App</string>
+    <string name="welcome">Welcome Back</string>
+    <string name="signup">Get Started</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
+    <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
+    <string name="title_activity_sing_up">SingUp</string>
+    <string name="have_account">Already have an account? Login here.</string>
+</resources>
+

@@ -92,8 +92,9 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginStart="10dp"
-                android:onClick="goToSignup"
                 />
+
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -111,8 +112,9 @@
                 android:textSize="15sp"
                 android:textColor="#707070"
                 android:gravity="right"
-
-
+                android:id="@+id/createAccount"
+                android:clickable="true"
+                android:focusable="true"
                 />
 
         </LinearLayout>

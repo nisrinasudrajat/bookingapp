@@ -1,13 +1,13 @@
 package com.example.ipbbookingapp;
 
-public class User {
+public class profile {
     public String namaUser, email, identitas, uname;
 
-    public User() {
+    public profile() {
 
     }
 
-    public User(String namaUser, String email, String identitas, String uname) {
+    public profile(String namaUser, String email, String identitas, String uname) {
         this.namaUser = namaUser;
         this.email = email;
         this.identitas = identitas;

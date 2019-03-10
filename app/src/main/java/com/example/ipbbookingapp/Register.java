@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
@@ -26,16 +27,15 @@ import org.w3c.dom.Text;
 public class Register extends AppCompatActivity {
     TextView signup;
     private EditText name, userEmail, userId, userName, userPassword;
-    private FirebaseAuth mAuth;
-    private ProgressDialog progressDialog;
     private Button btnSignUp;
+    DatabaseReference databaseReference;
+    FirebaseDatabase firebaseDatabase;
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        mAuth = FirebaseAuth.getInstance();
 
         signup = (TextView)findViewById(R.id.signup);
         Typeface face = Typeface.createFromAsset(getAssets(),"fonts/Signatura Monoline.ttf");
@@ -48,124 +48,62 @@ public class Register extends AppCompatActivity {
         userId = (EditText) findViewById(R.id.userId);
         userName = (EditText) findViewById(R.id.userName);
         userPassword = (EditText) findViewById(R.id.userPassword);
+        btnSignUp = (Button) findViewById(R.id.btnSignUp);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Profile");
+        firebaseAuth = FirebaseAuth.getInstance();
 
 
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String namaUser = name.getText().toString().trim();
+                final String email = userEmail.getText().toString().trim();
+                final String identitas = userId.getText().toString().trim();
+                final String uname = userName.getText().toString().trim();
+                String password = userPassword.getText().toString().trim();
 
-        progressDialog = new ProgressDialog(this);
-    }
-    @Override
-    protected void onStart() {
-        super.onStart();
+                if(TextUtils.isEmpty(email)){
+                    Toast.makeText(Register.this, "Please enter e-mail", Toast.LENGTH_LONG).show();
+                }
+                if(TextUtils.isEmpty(namaUser)){
+                    Toast.makeText(Register.this, "Please enter full name", Toast.LENGTH_LONG).show();
+                }
+                if(TextUtils.isEmpty(identitas)){
+                    Toast.makeText(Register.this, "Please enter identity number", Toast.LENGTH_LONG).show();
+                }
+                if(TextUtils.isEmpty(uname)){
+                    Toast.makeText(Register.this, "Please enter username", Toast.LENGTH_LONG).show();
+                }
+                if(TextUtils.isEmpty(password)){
+                    Toast.makeText(Register.this, "Please enter password", Toast.LENGTH_LONG).show();
+                }
 
-        if (mAuth.getCurrentUser() != null) {
-            //handle the already login user
-        }
-    }
-    private void registerUser(){
-
-        //getting email and password from edit texts
-        final String namaUser = name.getText().toString().trim();
-        final String email = userEmail.getText().toString().trim();
-        final String identitas = userId.getText().toString().trim();
-        final String uname = userName.getText().toString().trim();
-        String password = userPassword.getText().toString().trim();
-
-        //checking if email and passwords are empty
-        if (namaUser.isEmpty()) {
-            name.setError(getString(R.string.input_error_name));
-            name.requestFocus();
-            return;
-        }
-
-        if (email.isEmpty()) {
-            userEmail.setError(getString(R.string.input_error_email));
-            userEmail.requestFocus();
-            return;
-        }
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            userEmail.setError(getString(R.string.input_error_email_invalid));
-            userEmail.requestFocus();
-            return;
-        }
-
-        if (password.isEmpty()) {
-            userPassword.setError(getString(R.string.input_error_password));
-            userPassword.requestFocus();
-            return;
-        }
-
-        if (password.length() < 6) {
-            userPassword.setError(getString(R.string.input_error_password_length));
-            userPassword.requestFocus();
-            return;
-        }
-
-        if (identitas.isEmpty()) {
-            userId.setError(getString(R.string.input_error_id));
-            userId.requestFocus();
-            return;
-        }
-        if (uname.isEmpty()) {
-            userName.setError(getString(R.string.input_error_uname));
-            userName.requestFocus();
-            return;
-        }
-
-        if (uname.length() < 5) {
-            userName.setError(getString(R.string.input_error_uname_length));
-            userName.requestFocus();
-            return;
-        }
-
-        //if the email and password are not empty
-        //displaying a progress dialog
-
-        progressDialog.setMessage("Registering Please Wait...");
-        progressDialog.show();
-
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-
-                        if (task.isSuccessful()) {
-
-                            User user = new User(
-                                    namaUser,
-                                    email,
-                                    identitas,
-                                    uname
-
-                            );
-
-                            FirebaseDatabase.getInstance().getReference("Users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(Register.this, getString(R.string.registration_success), Toast.LENGTH_LONG).show();
-                                    } else {
-                                        //display a failure message
+                firebaseAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                profile information = new profile(
+                                        namaUser,
+                                        email,
+                                        identitas,
+                                        uname
+                                );
+                                FirebaseDatabase.getInstance().getReference("Profile")
+                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        Toast.makeText(Register.this, "Registration Complete", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(getApplicationContext(), Home.class));
                                     }
-                                }
-                            });
-
-                        } else {
-                            Toast.makeText(Register.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                });
+                            }
                         }
-                    }
-                });
-
+                    });
+            }
+        });
     }
 
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnSignUp:
-                registerUser();
-                break;
-        }
-    }
 }

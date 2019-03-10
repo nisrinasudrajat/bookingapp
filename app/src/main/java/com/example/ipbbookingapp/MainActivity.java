@@ -25,7 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView welcome;
+    TextView welcome, createAccount;
     private AutoCompleteTextView userEmail, userPassword;
     private Button btnLogin;
 
@@ -55,6 +55,16 @@ public class MainActivity extends AppCompatActivity {
         welcome = (TextView)findViewById(R.id.welcome);
         Typeface face = Typeface.createFromAsset(getAssets(),"fonts/Signatura Monoline.ttf");
         welcome.setTypeface(face);
+
+        createAccount = (TextView)findViewById(R.id.createAccount);
+
+        createAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Register.class);
+                startActivity(intent);
+            }
+        });
 
         userEmail=(AutoCompleteTextView) findViewById(R.id.userEmail);
         userPassword=(AutoCompleteTextView) findViewById(R.id.userPassword);
@@ -90,14 +100,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    }
-
-
-
-
-    public void goToSignup(View view) {
-        Intent intent = new Intent(this, Register.class);
-        startActivity(intent);
     }
 
 }

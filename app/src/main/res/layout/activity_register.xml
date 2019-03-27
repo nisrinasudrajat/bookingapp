@@ -137,7 +137,6 @@
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
-            android:onClick="onClick"
             />
 
         <TextView
@@ -148,7 +147,6 @@
             android:textSize="15sp"
             android:textColor="#707070"
             android:gravity="center"
-            android:onClick="onClick"
             />
 
     </LinearLayout>

@@ -17,5 +17,6 @@
     <string name="input_error_uname_length">Username must be more than 5 characters</string>
     <string name="registration_success">Registration success</string>
     <string name="title_activity_home">Home</string>
+    <string name="forgotpassword">Lupa Kata Sandi</string>
 </resources>
 

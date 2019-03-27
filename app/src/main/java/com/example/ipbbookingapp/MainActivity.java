@@ -77,11 +77,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-        @Override
-        protected void onStart() {
-            super.onStart();
-            mAuth.addAuthStateListener(mAuthListener);
-        }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
 
     private void startSigIn() {
         String email = userEmail.getText().toString().trim();
@@ -91,15 +91,15 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Fields are empty", Toast.LENGTH_LONG).show();
         } else {
 
-        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(!task.isSuccessful()){
-                    Toast.makeText(MainActivity.this, "Sign in problem", Toast.LENGTH_LONG).show();
+            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(!task.isSuccessful()){
+                        Toast.makeText(MainActivity.this, "Sign in problem", Toast.LENGTH_LONG).show();
+                    }
                 }
-            }
-        });
-    }
+            });
+        }
     }
 
 }

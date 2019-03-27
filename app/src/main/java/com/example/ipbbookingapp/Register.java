@@ -80,30 +80,28 @@ public class Register extends AppCompatActivity {
                 }
 
                 firebaseAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful()){
-                                profile information = new profile(
-                                        namaUser,
-                                        email,
-                                        identitas,
-                                        uname
-                                );
-                                FirebaseDatabase.getInstance().getReference("Profile")
-                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                        .setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        Toast.makeText(Register.this, "Registration Complete", Toast.LENGTH_LONG).show();
-                                        startActivity(new Intent(getApplicationContext(), Home.class));
-                                    }
-                                });
+                        .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+                                    profile information = new profile(
+                                            namaUser,
+                                            email,
+                                            identitas,
+                                            uname
+                                    );
+                                    FirebaseDatabase.getInstance().getReference("Profile")
+                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                            .setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            Toast.makeText(Register.this, "Registration Complete", Toast.LENGTH_LONG).show();
+                                            startActivity(new Intent(getApplicationContext(), Home.class));
+                                        }
+                                    });
+                                }
                             }
-                        }
-                    });
+                        });
             }
         });
-    }
-
-}
+    }}

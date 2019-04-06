@@ -21,7 +21,10 @@
     <string name="getcode">Pembayaran Anda telah diverifikasi</string>
     <string name="getcodee">Kode Booking</string>
     <string name="getcodeee">Salam Olahraga</string>
+<<<<<<< HEAD
     <string name="waiting"> Terimakasih telah booking lapangan di IPB Sport Booking!</string>
     <string name="waitingg"> Pesanan Anda akan diverifikasi dalam beberapa menit</string>
+=======
+>>>>>>> 4ae97c678b2d2a6b010ec59c9a9e37bb9791466c
 </resources>
 

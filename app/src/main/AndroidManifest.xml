@@ -11,8 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".waiting"></activity>
         <activity android:name=".codebooking" />
+=======
+        <activity android:name=".codebooking"></activity>
+>>>>>>> 4ae97c678b2d2a6b010ec59c9a9e37bb9791466c
         <activity android:name=".activity_lupa" />
         <activity android:name=".Menu" />
         <activity android:name=".Home" />

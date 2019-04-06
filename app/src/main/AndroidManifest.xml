@@ -11,9 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".uploadbukti"></activity>
         <activity android:name=".waiting" />
         <activity android:name=".codebooking" />
+=======
+<<<<<<< HEAD
+        <activity android:name=".waiting"></activity>
+        <activity android:name=".codebooking" />
+=======
+        <activity android:name=".codebooking"></activity>
+>>>>>>> 4ae97c678b2d2a6b010ec59c9a9e37bb9791466c
+>>>>>>> 07912c2d952fff2cc0dd0fa35924751b08d53081
         <activity android:name=".activity_lupa" />
         <activity android:name=".Menu" />
         <activity android:name=".Home" />

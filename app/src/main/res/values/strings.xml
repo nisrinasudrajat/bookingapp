@@ -18,5 +18,11 @@
     <string name="registration_success">Registration success</string>
     <string name="title_activity_home">Home</string>
     <string name="forgotpassword">Lupa Kata Sandi</string>
+    <string name="getcode">Pembayaran Anda telah diverifikasi</string>
+    <string name="getcodee">Kode Booking</string>
+    <string name="getcodeee">Salam Olahraga</string>
+    <string name="waiting"> Terimakasih telah booking lapangan di IPB Sport Booking!</string>
+    <string name="waitingg"> Pesanan Anda akan diverifikasi dalam beberapa menit</string>
+    <string name="upload"> Mohon upload bukti transfer</string>
 </resources>
 

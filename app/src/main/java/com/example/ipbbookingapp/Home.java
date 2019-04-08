@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.firebase.ui.database.FirebaseListAdapter;
@@ -20,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -48,16 +50,16 @@ public class Home extends AppCompatActivity {
             protected void populateView(View v, Object model, int position) {
                 TextView deskr = v.findViewById(R.id.deskr);
                 TextView hargaLpg = v.findViewById(R.id.hargaLpg);
-                TextView imgLpg = v.findViewById(R.id.imgLpg);
+                ImageView imgLpg = v.findViewById(R.id.imgLpg);
                 TextView kategori = v.findViewById(R.id.kategori);
                 TextView namaLpg = v.findViewById(R.id.namaLpg);
 
                 ItemList std = (ItemList) model;
                 deskr.setText("Deskripsi:" +std.getDeskr().toString());
                 hargaLpg.setText("Harga:"+std.getHargaLpg().toString());
-                imgLpg.setText("Gambar:"+std.getImgLpg().toString());
                 kategori.setText("Kategori:"+std.getKategori().toString());
                 namaLpg.setText("Nama:"+std.getNamaLpg().toString());
+                Picasso.with(Home.this).load(std.getImgLpg().toString()).into(imgLpg);
             }
         };
         lv.setAdapter(adapter);

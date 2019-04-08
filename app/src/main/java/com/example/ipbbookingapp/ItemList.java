@@ -3,12 +3,12 @@ package com.example.ipbbookingapp;
 public class ItemList {
     private String deskr, hargaLpg, imgLpg, kategori, namaLpg;
 
-    public ItemList(String deskr, String hargaLpg, String imgLpg, String kategori, String namaLpg) {
+    public ItemList(String deskr, String hargaLpg, String img, String kategori, String namaLpg) {
         this.deskr = deskr;
         this.hargaLpg = hargaLpg;
-        this.imgLpg = imgLpg;
         this.kategori = kategori;
         this.namaLpg = namaLpg;
+        imgLpg = img;
     }
 
     public ItemList() {
@@ -30,14 +30,6 @@ public class ItemList {
         this.hargaLpg = hargaLpg;
     }
 
-    public String getImgLpg() {
-        return imgLpg;
-    }
-
-    public void setImgLpg(String imgLpg) {
-        this.imgLpg = imgLpg;
-    }
-
     public String getKategori() {
         return kategori;
     }
@@ -52,5 +44,13 @@ public class ItemList {
 
     public void setNamaLpg(String namaLpg) {
         this.namaLpg = namaLpg;
+    }
+
+    public String getImgLpg() {
+        return imgLpg;
+    }
+
+    public void setImgLpg(String imgLpg) {
+        this.imgLpg = imgLpg;
     }
 }

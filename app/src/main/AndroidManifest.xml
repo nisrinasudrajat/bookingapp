@@ -11,18 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
-        <activity android:name=".waiting" > </activity>
-        <activity android:name=".codebooking" > </activity>
-           <activity android:name=".activity_lupa" > </activity>
-        <activity android:name=".Menu" > </activity>
-        <activity android:name=".Home" > </activity>
-        <activity android:name=".Register" > </activity>
+        <activity android:name=".KodeBooking"></activity>
+        <activity android:name=".history" />
+        <activity android:name=".waiting" />
+        <activity android:name=".codebooking" />
+        <activity android:name=".activity_lupa" />
+        <activity android:name=".Menu" />
+        <activity android:name=".Home" />
+        <activity android:name=".Register" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

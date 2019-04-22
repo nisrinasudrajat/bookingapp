@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KodeBooking"
+    android:background="@drawable/forget">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        >
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="@string/getcodee"
+            android:textColor="#000"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:layout_marginTop="6dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+            android:text="121212"
+            android:textColor="#000"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:layout_marginTop="6dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+            android:text="Hari"
+            android:textColor="#000"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="6dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Jam"
+            android:textColor="#000"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="6dp"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -24,5 +24,12 @@
     <string name="waiting"> Terimakasih telah booking lapangan di IPB Sport Booking!</string>
     <string name="waitingg"> Pesanan Anda akan diverifikasi dalam beberapa menit</string>
     <string name="upload"> Mohon upload bukti transfer</string>
+    <string name="title_activity_beranda">beranda</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 </resources>
 

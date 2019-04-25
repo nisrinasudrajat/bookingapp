@@ -5,4 +5,5 @@
     <item name="post_harga" type="id" />
     <item name="post_kategori" type="id" />
     <item name="post_img" type="id" />
+    <item name="fab" type="id" />
 </resources>

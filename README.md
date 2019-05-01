@@ -1,5 +1,5 @@
 # IPB play and book
-[Sekilas Tentang](#sekilas-tentang) | [Teknologi Pengembangan](#teknologi-pengembangan) | [*Use Case*](#use-case) | [Deskripsi *Use Case*](#deskripsi-use-case) | [*Class Diagram*] (#class-diagram) | [*Activity Diagram*] (#activity-diagram)
+[Sekilas Tentang](#sekilas-tentang) | [Teknologi Pengembangan](#teknologi-pengembangan) | [*Use Case*](#use-case) | [Deskripsi *Use Case*](#deskripsi-use-case) | [*Class Diagram*](#class-diagram) | [*Activity Diagrama*](#activity-diagram) 
 :---:|:---:|:---:|:---:|:---:|:---:
 
 ## Sekilas Tentang

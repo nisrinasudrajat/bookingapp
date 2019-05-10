@@ -9,4 +9,7 @@
     <color name="gradStart">#ffe200</color>
     <color name="overlayBg">#7f333639</color>
     <color name="overlayActionBar">#0e0d0e</color>
+    <color name="homeBackground">#DFDFDF</color>
+    <color name="colorButton">#373738</color>
+
 </resources>

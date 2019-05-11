@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "515444327678",
+    "firebase_url": "https://ipb-booknplay.firebaseio.com",
+    "project_id": "ipb-booknplay",
+    "storage_bucket": "ipb-booknplay.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515444327678:android:13c3c6a65bcbec53",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515444327678-g75tgov0u6ls4oambib8eb5g53f0oivn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "6c64fcf800ac9f0272bb6f22aabfd17759b73dd0"
+          }
+        },
+        {
+          "client_id": "515444327678-atcbldurc1rfk8d02h8o4m0fjecp7i3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzEXV1MXwjzwmCqfePr4m8Pcc9ciBLqWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515444327678-atcbldurc1rfk8d02h8o4m0fjecp7i3j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "254145562501-hthppito4etdnun45c49c4eunkheu32p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ipbbookingapp",
+            "certificate_hash": "6c64fcf800ac9f0272bb6f22aabfd17759b73dd0"
+          }
+        },
+        {
+          "client_id": "254145562501-tpi4u2t441drhrrr603b7v9ciit6egd4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ipbbookingapp",
+            "certificate_hash": "64de3d37e9edcddf6f7b99c742a04abf88cbed4a"
+          }
+        },
+        {
           "client_id": "254145562501-d468458inf1pv6rbcgqqa7mej2l4e8tt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -33,20 +49,13 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "254145562501-jpq0h9j3f8ufnfhv3qvincri1po63l6g.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

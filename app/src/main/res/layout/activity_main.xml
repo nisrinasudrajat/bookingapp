@@ -1,125 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgfix"
-    android:layout_gravity="center"
+    android:background="@drawable/my_bg"
+    android:padding="8dp"
     tools:context=".MainActivity">
 
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:cropToPadding="false"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/logo"
-        android:layout_marginTop="30dp"
-        />
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+    <TextView
+        android:id="@+id/txt_skip"
+        android:text="Just Skip"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_below="@id/logo"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:textColor="#000"
-            android:gravity="center"
-            android:paddingTop="20dp"
-            android:id="@+id/welcome"
+        android:textSize="22sp"
+        android:fontFamily="bellerose"
+        android:layout_marginBottom="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-            />
-        <AutoCompleteTextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:hint="E-mail"
-            android:inputType="textEmailAddress"
-            android:background="@drawable/rounded_white"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:drawableLeft="@drawable/user"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:drawablePadding="5dp"
-            android:paddingStart="10dp"
-            android:id="@+id/userEmail"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            />
-        <AutoCompleteTextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:hint="Password"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:background="@drawable/rounded_white"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:drawableLeft="@drawable/pw_icon"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:drawablePadding="5dp"
-            android:paddingStart="10dp"
-            android:id="@+id/userPassword"
-            android:layout_marginBottom="10dp"
-            />
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/rounded_yellow"
-            android:text="Login"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            />
-
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Forget Password"
-            android:textSize="15sp"
-            android:textColor="#707070"
-            android:gravity="right"
-            android:layout_marginTop="10dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Create Account"
-            android:textSize="15sp"
-            android:textColor="#707070"
-            android:gravity="right"
-            android:id="@+id/createAccount"
-            android:clickable="true"
-            android:focusable="true"
-            />
-
-    </LinearLayout>
-
-
+    <Button
+        android:id="@+id/btn_login"
+        android:text="Login"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:fontFamily="bellerose"
+        android:layout_marginBottom="30sp"
+        android:textSize="22sp"
+        android:layout_above="@+id/txt_skip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
 </RelativeLayout>

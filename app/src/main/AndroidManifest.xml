@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.ipbbookingapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,18 +12,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Detail"></activity>
-        <activity android:name=".Beranda" />
-        <activity android:name=".Transfer" />
-        <activity android:name=".detailOrder" />
-        <activity android:name=".KodeBooking" />
-        <activity android:name=".history" />
-        <activity android:name=".waiting" />
-        <activity android:name=".codebooking" />
-        <activity android:name=".activity_lupa" />
-        <activity android:name=".Menu" />
-        <activity android:name=".Home" />
-        <activity android:name=".Register" />
+        <activity android:name=".HomeActivity"></activity>
+
+        <meta-data
+            android:name="com.facebook.accountkit.ApplicationName"
+            android:value="@string/app_name" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/FACEBOOK_APP_ID" />
+        <meta-data
+            android:name="com.facebook.accountkit.ClientToken"
+            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
+
+        <activity android:name="com.facebook.accountkit.ui.AccountKitActivity" /> <!-- <activity android:name=".Detail"></activity> -->
+        <!-- <activity android:name=".Beranda" /> -->
+        <!-- <activity android:name=".Transfer" /> -->
+        <!-- <activity android:name=".detailOrder" /> -->
+        <!-- <activity android:name=".KodeBooking" /> -->
+        <!-- <activity android:name=".history" /> -->
+        <!-- <activity android:name=".waiting" /> -->
+        <!-- <activity android:name=".codebooking" /> -->
+        <!-- <activity android:name=".activity_lupa" /> -->
+        <!-- <activity android:name=".Menu" /> -->
+        <!-- <activity android:name=".Home" /> -->
+        <!-- <activity android:name=".Register" /> -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

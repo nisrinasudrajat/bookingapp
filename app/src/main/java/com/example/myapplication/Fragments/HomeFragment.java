@@ -1,9 +1,11 @@
 package com.example.myapplication.Fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.transition.Slide;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.myapplication.Adapter.HomeSliderAdapter;
 import com.example.myapplication.Adapter.LookbookAdapter;
+import com.example.myapplication.BookingActivity;
 import com.example.myapplication.Common.Common;
 import com.example.myapplication.Interface.IBannerLoadListener;
 import com.example.myapplication.Interface.ILookbookLoadListener;
@@ -38,6 +41,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 import ss.com.bannerslider.Slider;
 
@@ -58,6 +62,11 @@ public class HomeFragment extends Fragment implements ILookbookLoadListener, IBa
     Slider banner_slider;
     @BindView(R.id.recycler_look_book)
     RecyclerView recyclerView_look_book;
+    @OnClick(R.id.card_view_booking)
+    void booking()
+    {
+        startActivity(new Intent(getActivity(), BookingActivity.class));
+    }
 
     //FireStore
     CollectionReference bannerRef, lookbookRef;

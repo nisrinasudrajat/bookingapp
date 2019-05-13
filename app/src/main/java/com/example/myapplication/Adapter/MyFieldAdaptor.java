@@ -36,6 +36,7 @@ public class MyFieldAdaptor extends RecyclerView.Adapter<MyFieldAdaptor.MyViewHo
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
         myViewHolder.txt_field_name.setText(fieldList.get(i).getName());
         myViewHolder.txt_field_address.setText(fieldList.get(i).getAdress());
+        myViewHolder.txt_field_price.setText(fieldList.get(i).getPrice());
     }
 
     @Override
@@ -44,12 +45,13 @@ public class MyFieldAdaptor extends RecyclerView.Adapter<MyFieldAdaptor.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView txt_field_address, txt_field_name;
+        TextView txt_field_address, txt_field_name, txt_field_price;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             txt_field_address = (TextView)itemView.findViewById(R.id.txt_field_address);
             txt_field_name = (TextView)itemView.findViewById(R.id.txt_field_name);
+            txt_field_price = (TextView)itemView.findViewById(R.id.txt_field_price);
         }
     }
 }

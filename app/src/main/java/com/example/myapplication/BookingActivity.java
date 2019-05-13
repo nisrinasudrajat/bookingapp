@@ -80,7 +80,6 @@ public class BookingActivity extends AppCompatActivity {
         List<String> stepList = new ArrayList<>();
         stepList.add("Field");
         stepList.add("Time");
-        stepList.add("Price");
         stepList.add("Confirm");
         stepView.setSteps(stepList);
     }

@@ -1,14 +1,15 @@
 package com.example.myapplication.Model;
 
 public class Field {
-    private String name, adress;
+    private String name, adress, Price;
 
     public Field() {
     }
 
-    public Field(String name, String adress) {
+    public Field(String name, String adress, String price) {
         this.name = name;
         this.adress = adress;
+        this.Price = price;
     }
 
     public String getName() {
@@ -25,5 +26,13 @@ public class Field {
 
     public void setAdress(String adress) {
         this.adress = adress;
+    }
+
+    public String getPrice() {
+        return Price;
+    }
+
+    public void setPrice(String price) {
+        this.Price = price;
     }
 }

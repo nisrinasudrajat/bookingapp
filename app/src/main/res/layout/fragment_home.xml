@@ -31,6 +31,7 @@
                 android:id="@+id/txt_userName"
                 android:textColor="@android:color/white"
                 android:text="EddyLee"
+                android:fontFamily="@font/bellerose"
                 android:textSize="22sp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
@@ -40,6 +41,7 @@
                 android:textColor="@android:color/white"
                 android:text="G64160033"
                 android:textSize="16sp"
+                android:fontFamily="@font/bellerose"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -76,9 +78,9 @@
                     android:layout_height="50dp" />
                 <TextView
                     android:text="Booking"
-                    android:fontFamily="@fonts/bellerose"
                     android:layout_gravity="center_horizontal"
                     android:textSize="@dimen/text_card_size"
+                    android:fontFamily="@font/bellerose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -110,6 +112,7 @@
                     android:fontFamily="@fonts/bellerose"
                     android:layout_gravity="center_horizontal"
                     android:textSize="@dimen/text_card_size"
+                    app:fontFamily="@font/bellerose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -138,9 +141,9 @@
                     android:layout_height="50dp" />
                 <TextView
                     android:text="History"
-                    android:fontFamily="@fonts/bellerose"
                     android:layout_gravity="center_horizontal"
                     android:textSize="@dimen/text_card_size"
+                    android:fontFamily="@font/bellerose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -169,9 +172,9 @@
                     android:layout_height="50dp" />
                 <TextView
                     android:text="Notification"
-                    android:fontFamily="@fonts/bellerose"
                     android:layout_gravity="center_horizontal"
                     android:textSize="@dimen/text_card_size"
+                    android:fontFamily="@font/bellerose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -204,7 +207,7 @@
                     android:layout_centerVertical="true"
                     android:gravity="center_vertical"
                     android:text="Look Book"
-                    android:fontFamily="@fonts/bellerose"
+                    android:fontFamily="@font/bellerose"
                     android:textColor="@color/colorButton"
                     android:textSize="18sp"/>
 

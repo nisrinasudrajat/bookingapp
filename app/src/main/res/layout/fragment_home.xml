@@ -31,7 +31,6 @@
                 android:id="@+id/txt_userName"
                 android:textColor="@android:color/white"
                 android:text="EddyLee"
-                android:fontFamily="@font/bellerose"
                 android:textSize="22sp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
@@ -41,7 +40,6 @@
                 android:textColor="@android:color/white"
                 android:text="G64160033"
                 android:textSize="16sp"
-                android:fontFamily="@font/bellerose"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

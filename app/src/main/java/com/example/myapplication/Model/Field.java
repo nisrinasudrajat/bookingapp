@@ -1,15 +1,12 @@
 package com.example.myapplication.Model;
 
-public class Field {
-    private String name, adress, Price;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Field implements Parcelable {
+    private String name, adress, Price, fieldID;
 
     public Field() {
-    }
-
-    public Field(String name, String adress, String price) {
-        this.name = name;
-        this.adress = adress;
-        this.Price = price;
     }
 
     public String getName() {
@@ -33,6 +30,46 @@ public class Field {
     }
 
     public void setPrice(String price) {
-        this.Price = price;
+        Price = price;
+    }
+
+    public String getFieldID() {
+        return fieldID;
+    }
+
+    public void setFieldID(String fieldID) {
+        this.fieldID = fieldID;
+    }
+
+    protected Field(Parcel in) {
+        name = in.readString();
+        adress = in.readString();
+        Price = in.readString();
+        fieldID = in.readString();
+    }
+
+    public static final Creator<Field> CREATOR = new Creator<Field>() {
+        @Override
+        public Field createFromParcel(Parcel in) {
+            return new Field(in);
+        }
+
+        @Override
+        public Field[] newArray(int size) {
+            return new Field[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(adress);
+        dest.writeString(Price);
+        dest.writeString(fieldID);
     }
 }

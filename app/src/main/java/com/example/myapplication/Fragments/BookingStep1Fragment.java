@@ -146,7 +146,11 @@ public class BookingStep1Fragment extends Fragment implements IAllFieldLoadListe
                 if(task.isSuccessful())
                 {
                     for(QueryDocumentSnapshot documentSnapshot:task.getResult())
-                        list.add(documentSnapshot.toObject(Field.class));
+                    {
+                        Field field =  documentSnapshot.toObject(Field.class);
+                        field.setFieldID(documentSnapshot.getId());
+                        list.add(field);
+                    }
                     iBranchLoadListener.onBranchLoadSuccess(list);
                 }
             }

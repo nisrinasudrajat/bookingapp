@@ -59,6 +59,7 @@
         <Button
             android:id="@+id/btn_next_step"
             android:text="Next"
+            android:enabled="false"
             app:fontFamily="@font/bellerose"
             android:layout_above="@+id/txt_skip"
             android:layout_width="0dp"

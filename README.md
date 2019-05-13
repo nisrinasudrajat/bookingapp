@@ -6,7 +6,8 @@
 [`^ kembali ke atas ^`](#)
   
   IPB play and book merupakan aplikasi booking tempat atau lapangan olahraga yang terdapat di IPB.
-
+**Latar Belakang**
+**Lingkungan Pengembangan**
 **Tujuan** adanya aplikasi ini adalah memudahkan Civitas Akademi IPB untuk menyewa lapangan olahraga yang tersedia di IPB tanpa harus mengunjungi lapangan yang ingin disewa terlebih dahulu, transparansi informasi mengenai daftar jadwal penyewaan lapangan olahraga, data-data penyewaan ruangan lebih jelas dan tertata rapi, dan efisiensi waktu dan tenaga.
 
 ## Teknologi Pengembangan

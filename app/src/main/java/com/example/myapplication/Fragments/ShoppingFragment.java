@@ -65,28 +65,37 @@ public class ShoppingFragment extends Fragment implements IShoppingDataLoadListe
         loadShopingItem("Football");
     }
 
-    @BindView(R.id.chip_pingpong)
-    Chip chip_pingpong;
-    @OnClick(R.id.chip_pingpong)
-    void pingpongChipClick(){
-        setSelectedChip(chip_pingpong);
-        loadShopingItem("Pingpong");
+
+    @BindView(R.id.chip_badminton)
+    Chip chip_badminton;
+    @OnClick(R.id.chip_badminton)
+    void badmintonChipClick(){
+        setSelectedChip(chip_badminton);
+        loadShopingItem("Badminton");
     }
 
-    @BindView(R.id.chip_tenis)
-    Chip chip_tenis;
-    @OnClick(R.id.chip_tenis)
-    void tenisChipClick(){
-        setSelectedChip(chip_tenis);
-        loadShopingItem("Tenis");
+    @BindView(R.id.chip_tennis)
+    Chip chip_tennis;
+    @OnClick(R.id.chip_tennis)
+    void tennisChipClick(){
+        setSelectedChip(chip_tennis);
+        loadShopingItem("Tennis");
     }
 
-    @BindView(R.id.chip_volly)
-    Chip chip_volly;
-    @OnClick(R.id.chip_volly)
-    void vollyChipClick(){
-        setSelectedChip(chip_volly);
-        loadShopingItem("Volly");
+    @BindView(R.id.chip_ping_pong)
+    Chip chip_ping_pong;
+    @OnClick(R.id.chip_ping_pong)
+    void ping_pongChipClick(){
+        setSelectedChip(chip_ping_pong);
+        loadShopingItem("Ping_pong");
+    }
+
+    @BindView(R.id.chip_volleyball)
+    Chip chip_volleyball;
+    @OnClick(R.id.chip_volleyball)
+    void volleyballChipClick(){
+        setSelectedChip(chip_volleyball);
+        loadShopingItem("Volleyball");
     }
 
     @BindView(R.id.recycler_items)
@@ -132,8 +141,10 @@ public class ShoppingFragment extends Fragment implements IShoppingDataLoadListe
                 chipItem.setTextColor(getResources().getColor(android.R.color.white));
             }
             else //if selected
+            {
                 chipItem.setChipBackgroundColorResource(android.R.color.holo_orange_dark);
                 chipItem.setTextColor(getResources().getColor(android.R.color.black));
+            }
         }
     }
 

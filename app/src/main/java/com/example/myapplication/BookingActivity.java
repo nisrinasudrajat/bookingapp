@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -37,10 +38,35 @@ public class BookingActivity extends AppCompatActivity {
     Button btn_next_step;
 
     //Event
+    @OnClick(R.id.btn_previous_step)
+    void previousStep() {
+        if(Common.step == 2 || Common.step > 0)
+        {
+            Common.step--;
+            viewPager.setCurrentItem(Common.step);
+        }
+    }
+
     @OnClick(R.id.btn_next_step)
     void nextClick() {
-        Toast.makeText(this, ""+Common.currentField.getFieldID(), Toast.LENGTH_SHORT).show();
+        if(Common.step < 3 || Common.step == 0)
+        {
+            Common.step++;
+            if(Common.step == 1) //setelah pilih field
+            {
+                if(Common.currentField != null)
+                    loadTimeSlotOfField(Common.currentField.getFieldID());
+            }
+            viewPager.setCurrentItem(Common.step);
+        }
     }
+
+    private void loadTimeSlotOfField(String fieldID) {
+        //kirim bc ke fragment step 2
+        Intent intent = new Intent(Common.KEY_DISPLAY_TIME_SLOT);
+        localBroadcastManager.sendBroadcast(intent);
+    }
+
     //Broadcast receiver
     private BroadcastReceiver buttonNextReceiver = new BroadcastReceiver() {
         @Override
@@ -71,6 +97,7 @@ public class BookingActivity extends AppCompatActivity {
 
         //View
         viewPager.setAdapter(new MyViewPagerAdapter(getSupportFragmentManager()));
+        viewPager.setOffscreenPageLimit(3); //karena ada 3 fragment
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
@@ -79,6 +106,8 @@ public class BookingActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int i) {
+                //show step
+                stepView.go(i, true);
                 if(i == 0)
                     btn_previous_step.setEnabled(false);
                 else

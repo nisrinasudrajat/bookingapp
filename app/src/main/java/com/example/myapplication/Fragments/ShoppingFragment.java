@@ -6,11 +6,15 @@ import android.support.annotation.NonNull;
 import android.support.design.chip.Chip;
 import android.support.design.chip.ChipGroup;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.myapplication.Adapter.MyShoppingItemAdapter;
+import com.example.myapplication.Common.SpacesItemDecoration;
 import com.example.myapplication.Interface.IShoppingDataLoadListener;
 import com.example.myapplication.Model.ShoppingItem;
 import com.example.myapplication.R;
@@ -44,13 +48,49 @@ public class ShoppingFragment extends Fragment implements IShoppingDataLoadListe
 
     @BindView(R.id.chip_group)
     ChipGroup chipGroup;
+
     @BindView(R.id.chip_basket)
     Chip chip_basket;
     @OnClick(R.id.chip_basket)
     void basketChipClick(){
         setSelectedChip(chip_basket);
-        loadShopingItem(chip_basket.getText().toString());
+        loadShopingItem("Basket");
     }
+
+    @BindView(R.id.chip_football)
+    Chip chip_football;
+    @OnClick(R.id.chip_football)
+    void footballChipClick(){
+        setSelectedChip(chip_football);
+        loadShopingItem("Football");
+    }
+
+    @BindView(R.id.chip_pingpong)
+    Chip chip_pingpong;
+    @OnClick(R.id.chip_pingpong)
+    void pingpongChipClick(){
+        setSelectedChip(chip_pingpong);
+        loadShopingItem("Pingpong");
+    }
+
+    @BindView(R.id.chip_tenis)
+    Chip chip_tenis;
+    @OnClick(R.id.chip_tenis)
+    void tenisChipClick(){
+        setSelectedChip(chip_tenis);
+        loadShopingItem("Tenis");
+    }
+
+    @BindView(R.id.chip_volly)
+    Chip chip_volly;
+    @OnClick(R.id.chip_volly)
+    void vollyChipClick(){
+        setSelectedChip(chip_volly);
+        loadShopingItem("Volly");
+    }
+
+    @BindView(R.id.recycler_items)
+    RecyclerView recycler_items;
 
     private void loadShopingItem(String itemMenu) {
         shoppingItemRef = FirebaseFirestore.getInstance().collection("Shopping")
@@ -111,12 +151,24 @@ public class ShoppingFragment extends Fragment implements IShoppingDataLoadListe
         unbinder = ButterKnife.bind(this,itemView);
         iShoppingDataLoadListener = this;
 
+        //Default Load
+        loadShopingItem("Basket");
+
+        initView();
+
         return itemView;
+    }
+
+    private void initView() {
+        recycler_items.setHasFixedSize(true);
+        recycler_items.setLayoutManager(new GridLayoutManager(getContext(),2));
+        recycler_items.addItemDecoration(new SpacesItemDecoration(8));
     }
 
     @Override
     public void onShoppingDataLoadSucces(List<ShoppingItem> shoppingItemList) {
-
+        MyShoppingItemAdapter adapter = new MyShoppingItemAdapter(getContext(),shoppingItemList);
+        recycler_items.setAdapter(adapter);
     }
 
     @Override

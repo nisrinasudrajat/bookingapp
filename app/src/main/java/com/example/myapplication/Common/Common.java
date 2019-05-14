@@ -13,4 +13,8 @@ public class Common {
     public static User curretUser;
     public static Field currentField;
     public static int step = 0; //Menginisialisasi langkah pertama
+
+    public static String formatShoppingItemName(String name) {
+        return name.length() > 13 ? new StringBuilder(name.substring(0,10)).append("...").toString():name;
+    }
 }

@@ -3,13 +3,17 @@ package com.example.myapplication.Adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.myapplication.Common.Common;
 import com.example.myapplication.Model.ShoppingItem;
 import com.example.myapplication.R;
+import com.example.myapplication.Service.PicassoImageLoadingService;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -26,17 +30,21 @@ public class MyShoppingItemAdapter extends RecyclerView.Adapter<MyShoppingItemAd
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return null;
+        View itemView = LayoutInflater.from(context).inflate(R.layout.layout_shopping_item,viewGroup,false);
+        return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-
+        Picasso.get().load(shoppingItemList.get(i).getImage()).into(myViewHolder.img_shopping_item);
+        myViewHolder.txt_shopping_item_name.setText(Common.formatShoppingItemName(shoppingItemList.get(i).getName()));
+        myViewHolder.txt_shopping_item_price.setText(new StringBuilder("Rp ").append(shoppingItemList.get(i).getPrice()));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+
+        return shoppingItemList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

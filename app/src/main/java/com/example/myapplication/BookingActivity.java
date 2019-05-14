@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.myapplication.Adapter.MyViewPagerAdapter;
 import com.example.myapplication.Common.Common;
+import com.example.myapplication.Common.NonSwipeViewPager;
 import com.shuhart.stepview.StepView;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class BookingActivity extends AppCompatActivity {
     @BindView(R.id.step_view)
     StepView stepView;
     @BindView(R.id.view_pager)
-    ViewPager viewPager;
+    NonSwipeViewPager viewPager;
     @BindView(R.id.btn_previous_step)
     Button btn_previous_step;
     @BindView(R.id.btn_next_step)

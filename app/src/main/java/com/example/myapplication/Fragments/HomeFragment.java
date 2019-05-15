@@ -35,6 +35,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.nex3z.notificationbadge.NotificationBadge;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,6 +52,9 @@ import ss.com.bannerslider.Slider;
 public class HomeFragment extends Fragment implements ILookbookLoadListener, IBannerLoadListener {
 
     private Unbinder unbinder;
+
+    @BindView(R.id.notification_badge)
+    NotificationBadge notificationBadge;
 
     @BindView(R.id.layout_user_information)
     LinearLayout layout_user_information;

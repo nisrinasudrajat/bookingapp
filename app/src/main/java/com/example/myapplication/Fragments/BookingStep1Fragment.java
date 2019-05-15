@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.myapplication.Adapter.MyFieldAdaptor;
+import com.example.myapplication.Common.Common;
 import com.example.myapplication.Common.SpacesItemDecoration;
 import com.example.myapplication.Interface.IAllFieldLoadListener;
 import com.example.myapplication.Interface.IBranchLoadListener;
@@ -69,7 +70,7 @@ public class BookingStep1Fragment extends Fragment implements IAllFieldLoadListe
         iAllFieldLoadListener = this;
         iBranchLoadListener = this;
 
-        dialog = new SpotsDialog.Builder().setContext(getActivity()).build();
+        dialog = new SpotsDialog.Builder().setContext(getActivity()).setCancelable(false).build();
     }
 
     @Nullable
@@ -133,6 +134,8 @@ public class BookingStep1Fragment extends Fragment implements IAllFieldLoadListe
 
     private void loadBranchOfField(String fieldName) {
         dialog.show();
+
+        Common.field = fieldName;
 
         branchRef = FirebaseFirestore.getInstance()
                 .collection("AllField")

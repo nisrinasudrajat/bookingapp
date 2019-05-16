@@ -1,7 +1,5 @@
 package com.example.myapplication.Common;
 
-import android.content.Intent;
-
 import com.example.myapplication.Model.Admin;
 import com.example.myapplication.Model.Field;
 import com.example.myapplication.Model.User;

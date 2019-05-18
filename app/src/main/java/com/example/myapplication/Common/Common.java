@@ -1,8 +1,15 @@
 package com.example.myapplication.Common;
 
+import android.content.Intent;
+
 import com.example.myapplication.Model.Admin;
 import com.example.myapplication.Model.Field;
+import com.example.myapplication.Model.Lapangan;
+import com.example.myapplication.Model.TimeSlot;
 import com.example.myapplication.Model.User;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class Common {
     public static final String KEY_ENABLE_BUTTON_NEXT = "ENABLE_BUTTON_NEXT";
@@ -12,12 +19,19 @@ public class Common {
     public static final String KEY_ADMIN_LOAD_DONE = "ADMIN_LOAD_DONE";
     public static final String KEY_STEP = "STEP";
     public static final String KEY_ADMIN_SELECTED = "ADMIN_SELECTED";
+    public static final Object DISABLE_TAG = "DISABLE";
+    public static final String KEY_TIME_SLOT = "TIME_SLOT";
+    public static final String KEY_CONFIRM_BOOKING = "CONFIRM_BOOKING";
     public static String IS_LOGIN = "IsLogin";
     public static User curretUser;
     public static Field currentField;
     public static Admin currentAdmin;
     public static int step = 0; //Menginisialisasi langkah pertama
     public static String field="";
+    public static Lapangan lapangan;
+    public static int currentTimeSlot = -1;
+    public static Calendar currentDate = Calendar.getInstance();
+    public static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd_MM_yyyy"); //Only use when need format key
 
 
     public static String formatShoppingItemName(String name) {

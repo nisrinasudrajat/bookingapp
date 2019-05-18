@@ -15,8 +15,7 @@
         android:layout_height="160dp" />
 
     <TextView
-        android:text="Thank you for booking!
-     Let's book and play!"
+        android:text="Thank you for booking! Let's book and play!"
         android:textSize="15sp"
         android:textAllCaps="false"
         android:layout_marginBottom="20dp"
@@ -82,8 +81,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-
-
         </LinearLayout>
         <View
             android:layout_width="fill_parent"
@@ -91,6 +88,7 @@
             android:background="@android:color/darker_gray" />
 
         <TextView
+            android:id="@+id/txt_field_name"
             android:layout_marginTop="10dp"
             android:text="Lapangan Tenis"
             android:textStyle="bold"
@@ -98,19 +96,26 @@
             android:layout_marginBottom="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
         <TextView
-            android:text="Lapangan #A"
+            android:id="@+id/txt_field_name2"
+            android:text="Lapangan Tenis"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <ImageView
-            android:src="@drawable/ic_image_black_24dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="300dp"
-            android:layout_height="160dp" />
+        <!--<TextView-->
+            <!--android:text="Lapangan #A"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+
+        <!--<ImageView-->
+            <!--android:src="@drawable/ic_image_black_24dp"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_width="300dp"-->
+            <!--android:layout_height="160dp" />-->
 
         <LinearLayout
             android:orientation="horizontal"

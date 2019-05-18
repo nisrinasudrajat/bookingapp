@@ -57,6 +57,11 @@ public class BookingActivity extends AppCompatActivity {
         {
             Common.step--;
             viewPager.setCurrentItem(Common.step);
+            if (Common.step < 3) //Always enable NEXT when Step <3
+            {
+                btn_next_step.setEnabled(true);
+                setColorButton();
+            }
         }
     }
 
@@ -75,8 +80,19 @@ public class BookingActivity extends AppCompatActivity {
                 if(Common.currentAdmin != null)
                     loadTimeSlotOfEachDield(Common.currentAdmin.getAdminId());
             }
+            else if(Common.step == 3) //Confirm
+            {
+                if(Common.currentTimeSlot != -1)
+                    confirmBooking();
+            }
             viewPager.setCurrentItem(Common.step);
         }
+    }
+
+    private void confirmBooking() {
+        //Send broadcast to fragment step four
+        Intent intent = new Intent(Common.KEY_CONFIRM_BOOKING);
+        localBroadcastManager.sendBroadcast(intent);
     }
 
     private void loadTimeSlotOfEachDield(String adminId) {
@@ -139,9 +155,12 @@ public class BookingActivity extends AppCompatActivity {
                 Common.currentField = intent.getParcelableExtra(Common.KEY_FIELD_STORE);
             else if(step == 2)
                 Common.currentAdmin = intent.getParcelableExtra(Common.KEY_ADMIN_SELECTED);
+            else if(step == 3)
+                Common.currentTimeSlot = intent.getIntExtra(Common.KEY_TIME_SLOT,-1);
 
-                btn_next_step.setEnabled(true);
-                setColorButton();
+
+            btn_next_step.setEnabled(true);
+            setColorButton();
             }
         };
 

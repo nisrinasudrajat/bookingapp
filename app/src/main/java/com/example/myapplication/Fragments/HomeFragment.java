@@ -1,6 +1,7 @@
 package com.example.myapplication.Fragments;
 
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -21,7 +22,10 @@ import com.example.myapplication.Adapter.HomeSliderAdapter;
 import com.example.myapplication.Adapter.LookbookAdapter;
 import com.example.myapplication.BookingActivity;
 import com.example.myapplication.Common.Common;
+import com.example.myapplication.Database.CartDatabase;
+import com.example.myapplication.Database.DatabaseUtils;
 import com.example.myapplication.Interface.IBannerLoadListener;
+import com.example.myapplication.Interface.ICountItemInCartListener;
 import com.example.myapplication.Interface.ILookbookLoadListener;
 import com.example.myapplication.Model.Banner;
 import com.example.myapplication.R;
@@ -49,9 +53,12 @@ import ss.com.bannerslider.Slider;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment implements ILookbookLoadListener, IBannerLoadListener {
+public class HomeFragment extends Fragment implements ILookbookLoadListener, IBannerLoadListener, ICountItemInCartListener {
 
     private Unbinder unbinder;
+    CartDatabase cartDatabase;
+
+    AlertDialog dialog;
 
     @BindView(R.id.notification_badge)
     NotificationBadge notificationBadge;
@@ -84,6 +91,11 @@ public class HomeFragment extends Fragment implements ILookbookLoadListener, IBa
         lookbookRef = FirebaseFirestore.getInstance().collection("Lookbook");
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        countCartItem();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -91,6 +103,8 @@ public class HomeFragment extends Fragment implements ILookbookLoadListener, IBa
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         unbinder = ButterKnife.bind(this,view);
+
+        cartDatabase = CartDatabase.getInstance(getContext());
 
         //Init
         Slider.init(new PicassoImageLoadingService());
@@ -103,9 +117,14 @@ public class HomeFragment extends Fragment implements ILookbookLoadListener, IBa
             setUserInformation();
             loadBanner();
             loadLookBook();
+            countCartItem();
         }
 
         return view;
+    }
+
+    private void countCartItem() {
+        DatabaseUtils.countItemInCart(cartDatabase, this);
     }
 
     private void loadLookBook() {
@@ -182,6 +201,11 @@ public class HomeFragment extends Fragment implements ILookbookLoadListener, IBa
     @Override
     public void onBannerLoadFailed(String message) {
         Toast.makeText(getActivity(),message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onCartItemCountSuccess(int count) {
+        notificationBadge.setText(String.valueOf(count));
     }
 }
 

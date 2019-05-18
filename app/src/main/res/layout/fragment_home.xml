@@ -101,7 +101,7 @@
                 
                 <com.nex3z.notificationbadge.NotificationBadge
                     android:id="@+id/notification_badge"
-                    android:layout_toRightOf="@+id/txt_cart_icon"
+                    android:layout_toRightOf="@+id/txt_cart_title"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     app:nbMaxTextLength="2"/>
@@ -113,7 +113,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_height="50dp" />
                 <TextView
-                    android:id="@+id/txt_cart_icon"
+                    android:id="@+id/txt_cart_title"
                     android:layout_below="@+id/cart_icon"
                     android:text="Cart"
                     android:textSize="@dimen/text_card_size"

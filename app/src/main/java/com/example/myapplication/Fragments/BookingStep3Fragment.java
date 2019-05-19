@@ -199,9 +199,9 @@ public class BookingStep3Fragment extends Fragment implements ITimeSlotLoadListe
         horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
             @Override
             public void onDateSelected(Calendar date, int position) {
-             if(Common.currentDate.getTimeInMillis() != date.getTimeInMillis())
+             if(Common.bookingDate.getTimeInMillis() != date.getTimeInMillis())
              {
-                 Common.currentDate = date; //kode ini gak akan load tanggal yang sama dengan tanggal yang dipilih
+                 Common.bookingDate = date; //kode ini gak akan load tanggal yang sama dengan tanggal yang dipilih
                  loadAvailableTimeOfEachField(Common.currentAdmin.getAdminId(),
                          simpleDateFormat.format(date.getTime()));
              }

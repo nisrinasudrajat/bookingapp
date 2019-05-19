@@ -3,5 +3,11 @@
     <string name="app_name">IPB bookNplay.</string>
     <string name="FACEBOOK_APP_ID">444548816296087</string>
     <string name="ACCOUNT_KIT_CLIENT_TOKEN">3d91a4a0acc7054c1bb5649edf5d5dd2</string>
+    
+    <string name="address_bullet">\u2022 Address:</string>
+    <string name="time_bullet">\u2022 Time:</string>
+    <string name="fieldjenis_bullet">\u2022 Type:</string>
+    <string name="field_bullet">\u2022 Field:</string>
+    <string name="bullet">\u2022</string>
 
 </resources>

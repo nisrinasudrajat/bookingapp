@@ -22,6 +22,7 @@ import android.text.format.DateUtils;
 import com.example.myapplication.Adapter.HomeSliderAdapter;
 import com.example.myapplication.Adapter.LookbookAdapter;
 import com.example.myapplication.BookingActivity;
+import com.example.myapplication.CartActivity;
 import com.example.myapplication.Common.Common;
 import com.example.myapplication.Database.CartDatabase;
 import com.example.myapplication.Database.DatabaseUtils;
@@ -103,6 +104,11 @@ public class HomeFragment extends Fragment implements ILookbookLoadListener, IBa
     @OnClick(R.id.card_view_booking)
     void booking() {
         startActivity(new Intent(getActivity(), BookingActivity.class));
+    }
+
+    @OnClick(R.id.card_view_cart)
+    void openCartActivity() {
+        startActivity(new Intent(getActivity(), CartActivity.class));
     }
 
     //FireStore

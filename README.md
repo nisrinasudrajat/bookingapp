@@ -20,7 +20,7 @@
 ## *Use Case*
 [`^ kembali ke atas ^`](#)
 
-<img src="/Dokumentasi/Use Case.PNG" align=center>
+<img src="/Dokumentasi/Use Case new.png" align=center>
 
 ## Deskripsi *Use Case*
 [`^ kembali ke atas ^`](#)
@@ -35,4 +35,6 @@
 ## *Activity Diagram*
 [`^ kembali ke atas ^`](#)
 
-<img src="/Dokumentasi/Activity Diagram .jpg" align=center>
+<img src="/Dokumentasi/new activity d.png" align=center>
+<img src="/Dokumentasi/new actv d2.png" align=center>
+
